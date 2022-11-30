@@ -49,21 +49,24 @@ if ($submit) {
 }
 
 // Login code
-$login.addEventListener("click", () => {
-  const email_log = document.getElementById("mail_log").value;
-  const password_log = document.getElementById("pass_log").value;
 
-  signInWithEmailAndPassword(auth, email_log, password_log)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      alert("Ingresaste correctamente");
-      window.open("https://argenisay.github.io/trabajofFinal3/#home");
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert("error no haz podido ingresar");
-    });
-});
+if ($login) {
+  $login.addEventListener("click", () => {
+    const email_log = document.getElementById("mail_log").value;
+    const password_log = document.getElementById("pass_log").value;
+
+    signInWithEmailAndPassword(auth, email_log, password_log)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        alert("Ingresaste correctamente");
+        window.open("https://argenisay.github.io/trabajofFinal3/#home");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("error no haz podido ingresar");
+      });
+  });
+}

@@ -25,38 +25,39 @@ function checkInputs() {
     // show error
     // add error class
 
-    setErrorFor(username, "User cannot be blank");
+    setErrorFor(username, "Debe escribir el nombre de usuario");
   } else {
     // add success class
     setSuccessFor(username);
   }
 
   if (emailValue === "") {
-    setErrorFor(mail, "Email cannot be blank");
+    setErrorFor(mail, "Debes completar el campo del correo");
   } else if (!isEmail(emailValue)) {
-    setErrorFor(mail, "Email is not valid");
+    setErrorFor(mail, "Correo no valido");
   } else {
     setSuccessFor(mail);
   }
 
   if (phoneValue === "") {
-    setErrorFor(phone, "Phone cannot be blank");
+    setErrorFor(phone, "Debes completar el campo del telefono");
   } else if (!isPhone(phoneValue)) {
-    setErrorFor(phone, "Phone is not valid");
+    setErrorFor(phone, "El numero de tener 9 digitos y empezar con 9");
+
   } else {
     setSuccessFor(phone);
   }
 
   if (passValue === "") {
-    setErrorFor(pass, "Password cannot be blank");
+    setErrorFor(pass, "El campo debe ser llenado");
   } else {
     setSuccessFor(pass);
   }
 
   if (pass_2Value === "") {
-    setErrorFor(pass_2, "Password 2 cannot be blank");
+    setErrorFor(pass_2, "El campo debe ser llenado");
   } else if (passValue !== pass_2Value) {
-    setErrorFor(pass_2, "Password does not match");
+    setErrorFor(pass_2, "Las contraseñas no coincide");
   } else {
     setSuccessFor(pass_2);
   }
